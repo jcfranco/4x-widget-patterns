@@ -1,0 +1,23 @@
+{
+  "name": "4x-widget-snippets",
+  "version": "1.0.0",
+  "description": "4x widget snippets",
+  "scripts": {
+    "postinstall": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jcfranco/4x-widget-snippets"
+  },
+  "keywords": [
+    "jsapi",
+    "widget",
+    "resources"
+  ],
+  "author": "JC Franco",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/arcgis-js-api": "^4.2.0",
+    "typescript": "^2.2.1"
+  }
+}
