@@ -8,6 +8,7 @@ DealingWithWhitespace
 DefiningGettersAndSetters
 HandlingChildrenEvents
 HandlingMultipleEvents
+InnerHTML
 ManagingListItemFocus
 NodeCreation
 ReferencingNodesOnDemand
