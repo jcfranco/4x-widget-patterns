@@ -14,6 +14,7 @@ NodeCreation
 ReferencingNodesOnDemand
 RenderingArrayItems
 RenderingCollectionItems
+RoleAttribute
 SchedulingRender
 SpreadingAttributes
 SyntheticEvents
