@@ -9,7 +9,7 @@ import {
   subclass
 } from "esri/core/accessorSupport/decorators";
 
-import {jsxFactory, renderable} from "esri/widgets/support/widget";
+import {tsx, renderable} from "esri/widgets/support/widget";
 
 const CSS = {
   base: "esri-synthetic-events",

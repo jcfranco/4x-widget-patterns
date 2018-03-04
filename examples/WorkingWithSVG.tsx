@@ -2,7 +2,7 @@
 /// <amd-dependency path="esri/core/tsSupport/decorateHelper" name="__decorate" />
 
 import {subclass, declared, property} from "esri/core/accessorSupport/decorators";
-import {renderable, jsxFactory} from "esri/widgets/support/widget";
+import {renderable, tsx} from "esri/widgets/support/widget";
 
 import Widget = require("esri/widgets/Widget");
 

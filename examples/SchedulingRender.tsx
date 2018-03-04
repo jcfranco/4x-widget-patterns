@@ -5,7 +5,7 @@ import {subclass, declared} from "esri/core/accessorSupport/decorators";
 
 import Widget = require("esri/widgets/Widget");
 
-import {jsxFactory} from "esri/widgets/support/widget";
+import {tsx} from "esri/widgets/support/widget";
 
 const CSS = {
   base: "esri-scheduling-render"

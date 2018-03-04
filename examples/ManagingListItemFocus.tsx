@@ -1,13 +1,15 @@
 /// <amd-dependency path="esri/core/tsSupport/declareExtendsHelper" name="__extends" />
 /// <amd-dependency path="esri/core/tsSupport/decorateHelper" name="__decorate" />
 
-import {UP_ARROW, DOWN_ARROW} from "dojo/keys";
 
 import {subclass, declared, property} from "esri/core/accessorSupport/decorators";
 
 import Widget = require("esri/widgets/Widget");
 
-import {renderable, jsxFactory} from "esri/widgets/support/widget";
+import {renderable, tsx} from "esri/widgets/support/widget";
+
+const UP_ARROW = 38;
+const DOWN_ARROW = 40;
 
 const CSS = {
   base: "esri-hello-list",

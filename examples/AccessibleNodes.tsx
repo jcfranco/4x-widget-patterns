@@ -5,7 +5,7 @@ import {subclass, declared, property} from "esri/core/accessorSupport/decorators
 
 import Widget = require("esri/widgets/Widget");
 
-import {renderable, jsxFactory, accessibleHandler} from "esri/widgets/support/widget";
+import {renderable, tsx, accessibleHandler} from "esri/widgets/support/widget";
 
 const CSS = {
   base: "esri-accessible-nodes"

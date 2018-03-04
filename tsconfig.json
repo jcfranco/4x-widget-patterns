@@ -1,18 +1,14 @@
 {
   "compilerOptions": {
-    "experimentalDecorators": true,
-    "inlineSourceMap": false,
-    "jsx": "react",
     "module": "amd",
-    "noEmitHelpers": true,
-    "noEmitOnError": true,
     "noImplicitAny": true,
-    "noImplicitThis": true,
-    "noImplicitUseStrict": true,
-    "noUnusedLocals": true,
-    "reactNamespace": "jsxFactory",
-    "suppressImplicitAnyIndexErrors": true,
-    "target": "es5"
+    "sourceMap": true,
+    "jsx": "react",
+    "jsxFactory": "tsx",
+    "target": "es5",
+    "experimentalDecorators": true,
+    "preserveConstEnums": true,
+    "suppressImplicitAnyIndexErrors": true
   },
   "include": [
     "examples/*.ts*",

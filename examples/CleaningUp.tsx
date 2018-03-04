@@ -8,7 +8,7 @@ import promiseUtils = require("esri/core/promiseUtils");
 import Widget = require("esri/widgets/Widget");
 
 
-import {renderable, jsxFactory} from "esri/widgets/support/widget";
+import {renderable, tsx} from "esri/widgets/support/widget";
 
 const CSS = {
   base: "esri-cleaning-up"
@@ -30,7 +30,7 @@ class CleaningUp extends declared(Widget) {
       promiseUtils.resolve(), dayInSeconds, null
     );
 
-    const counterWatcher = this.watch<number>("counter", (value, oldValue, name) => {
+    const counterWatcher = this.watch("counter", (value: number, oldValue: number, name: string) => {
       console.log(`${name} changed from ${oldValue} to ${value}`);
     });
 
