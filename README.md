@@ -2,6 +2,10 @@
 
 Collection of focused examples useful for widget development.
 
+## Interactive Browser
+
+https://jcfranco.github.io/4x-widget-patterns/browser
+
 ## Requirements
 
 * [node & npm](https://nodejs.org/)
