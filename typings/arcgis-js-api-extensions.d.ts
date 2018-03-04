@@ -5,4 +5,3 @@ declare namespace __esri {
   }
 
 }
-

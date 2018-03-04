@@ -17,6 +17,8 @@
   "author": "JC Franco",
   "license": "MIT",
   "devDependencies": {
+    "@types/highlight.js": "~9.12.2",
+    "dojo-typings": "~1.11.9",
     "typescript": "~2.7.2"
   }
 }
