@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-  <title>Widget 4.x examples</title>
+  <title>Widget 4.x widget patterns</title>
   <link rel="stylesheet" href="https://js.arcgis.com/4.7/esri/css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/monokai-sublime.min.css">
   <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.0.0-beta.31/css/calcite-web.min.css">
@@ -39,8 +39,8 @@
           main: "highlight.min"
         },
         {
-          name: "examples",
-          location: location.pathname
+          name: "patterns",
+          location: location.pathname + "../patterns"
         }
       ]
     }
@@ -57,61 +57,57 @@
       return document.getElementById(id);
     }
 
-    function toLabel(example) {
-      return example.replace(/([a-z])([A-Z])/g, "$1 $2");
+    function toLabel(pattern) {
+      return pattern.replace(/([a-z])([A-Z])/g, "$1 $2");
     }
 
     require([
       "require",
-      "dojo/text!examples/manifest.txt",
+      "dojo/text!patterns/manifest.json",
       "dojo/domReady!"
-    ], function(require, examples) {
-      var exampleToken = decodeURI(location.hash).slice(1),
-          exampleName  = exampleToken
+    ], function(require, patternsJson) {
+      var patternToken = decodeURI(location.hash).slice(1);
+      var patternName  = patternToken
             .replace(/-/g, "");  // strip delimiters
+      var patterns = JSON.parse(patternsJson).patterns;
 
-      var select = byId("example-select");
+      var select = byId("pattern-select");
 
       function redirectToOption(optionIndex) {
         window.location.hash = select.options[optionIndex].value
       }
 
-      examples
-        .split("\n")
-        .filter(function(example) {
-          return !!example;
-        })
-        .forEach(function(example) {
-          var option = document.createElement("option");
-          option.label = toLabel(example);
-          option.value = example;
-          option.selected = example.toLowerCase() === exampleName.toLowerCase();
-          select.appendChild(option);
-        });
+      patterns.forEach(function(pattern) {
+        var option = document.createElement("option");
+        option.label = toLabel(pattern);
+        option.value = pattern;
+        option.selected = pattern.toLowerCase() === patternName.toLowerCase();
+        select.appendChild(option);
+      });
 
       select.addEventListener("input", function() {
         redirectToOption(select.selectedIndex);
       });
 
-      if (!exampleName) {
+      if (!patternName) {
         redirectToOption(0);
         return;
       }
 
-      document.title = document.title + " - " + exampleToken;
+      document.title = document.title + " - " + patternToken;
 
-      var exampleMid = "examples/" + exampleName;
-      var exampleCodeMid = "dojo/text!" + exampleMid + ".tsx";
+      var patternMid = "patterns/" + patternName;
+      var patternCodeMid = "dojo/text!" + patternMid + ".tsx";
 
       require([
-        exampleMid,
-        exampleCodeMid,
+        patternMid,
+        patternCodeMid,
         "highlight"
-      ], function(Example, exampleCode, highlight) {
+      ], function(Pattern, patternCode, highlight) {
         var codeDiv = byId("codeDiv");
-        codeDiv.textContent = exampleCode;
+        codeDiv.textContent = patternCode;
         highlight.highlightBlock(codeDiv);
-        widget = new Example({}, "widgetDiv");
+        widget = new Pattern({ container: "widgetDiv" });
       });
 
     });
@@ -122,8 +118,8 @@
   <div class="grid-container">
     <div class="column-24">
       <label>
-        <h1>Example</h1>
-        <select id="example-select"></select>
+        <h1>Pattern</h1>
+        <select id="pattern-select"></select>
       </label>
       <div class="column-16 code-section">
         <header><h4>Code</h4></header>
